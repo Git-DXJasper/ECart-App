@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.login.RegisterFragment">
+
+    <EditText
+        android:id="@+id/edt_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/shape_round_border"
+        android:hint="@string/hint_email"
+        android:padding="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/edt_password"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:layout_editor_absoluteX="20dp" />
+
+    <EditText
+        android:id="@+id/edt_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/shape_round_border"
+        android:hint="@string/hint_password"
+        android:padding="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/edt_name"
+        app:layout_constraintTop_toBottomOf="@+id/edt_email"
+        tools:layout_editor_absoluteX="20dp" />
+
+    <EditText
+        android:id="@+id/edt_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/shape_round_border"
+        android:hint="@string/hint_full_name"
+        android:padding="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/edt_phone"
+        app:layout_constraintTop_toBottomOf="@+id/edt_password"
+        tools:layout_editor_absoluteX="20dp" />
+
+    <EditText
+        android:id="@+id/edt_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/shape_round_border"
+        android:hint="@string/hint_mobile_number"
+        android:padding="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_signup"
+        app:layout_constraintTop_toBottomOf="@+id/edt_name"
+        tools:layout_editor_absoluteX="20dp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="@string/signup"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_phone" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

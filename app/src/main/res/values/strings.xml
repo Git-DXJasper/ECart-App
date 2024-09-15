@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">ECart</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="onboarding1">Onboarding\nScreen One</string>
+    <string name="next">Next</string>
+    <string name="skip">Skip</string>
+    <string name="onboarding2">Onboarding\nScreen Two</string>
+    <string name="onboarding3">Onboarding\nScreen Three</string>
+    <string name="hint_email">enter your email here</string>
+    <string name="hint_password">enter your password here</string>
+    <string name="login">Login</string>
+    <string name="to_signup"><u>Do not have an account? Click here to sign up!</u>></string>
+    <string name="hint_full_name">enter your full name here</string>
+    <string name="hint_mobile_number">enter your mobile number here</string>
+    <string name="signup">Sign up</string>
+    <string name="home">Home</string>
+    <string name="category">Category</string>
+    <string name="cart">Cart</string>
+    <string name="profile">Profile</string>
+    <string name="addtocart">Add to cart</string>
+    <string name="search">Search your keyword here</string>
+</resources>
