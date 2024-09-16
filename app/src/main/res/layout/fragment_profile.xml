@@ -1,15 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.profile.ProfileFragment"
-    android:background="#CEFD96">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.profile.ProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/txt_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Hello, username!"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="10dp"
+        android:textSize="20sp"/>
+    
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_addr"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/icon_addr"
+        android:drawableRight="@drawable/icon_next"
+        app:layout_constraintTop_toBottomOf="@id/txt_username"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:text="@string/addr"
+        android:textAllCaps="false"/>
 
-</FrameLayout>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_payment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/icon_wallet"
+        android:drawableRight="@drawable/icon_next"
+        app:layout_constraintTop_toBottomOf="@id/btn_addr"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:text="@string/payment"
+        android:textAllCaps="false"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_orders"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/icon_orders"
+        android:drawableRight="@drawable/icon_next"
+        app:layout_constraintTop_toBottomOf="@id/btn_payment"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:text="@string/orders"
+        android:textAllCaps="false"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_settings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/icon_settings"
+        android:drawableRight="@drawable/icon_next"
+        app:layout_constraintTop_toBottomOf="@id/btn_orders"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:text="@string/settings"
+        android:textAllCaps="false"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

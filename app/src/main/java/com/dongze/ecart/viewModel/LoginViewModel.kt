@@ -1,12 +1,11 @@
 package com.dongze.ecart.viewModel
 
 import android.util.Log
-import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.dongze.ecart.model.remote.ApiClient
-import com.dongze.ecart.model.remote.LoginService
+import com.dongze.ecart.model.remote.services.LoginService
 import com.dongze.ecart.model.remote.profile.AuthUserRequest
 import com.dongze.ecart.model.remote.profile.AuthUserResponse
 import com.dongze.ecart.model.remote.profile.RegisterRequest
@@ -14,7 +13,6 @@ import com.dongze.ecart.model.remote.profile.RegisterResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import retrofit2.create
 
 class LoginViewModel: ViewModel() {
     private val loginService = ApiClient.retrofit.create(LoginService::class.java)

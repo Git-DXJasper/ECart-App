@@ -50,8 +50,7 @@ class SubCategoryFragment : Fragment() {
                 ContextCompat.getColor(requireContext(), android.R.color.holo_orange_light) // Selected color
             )
 
-            TabLayoutMediator(binding.tabLayout, binding.vp2){
-                    tab, position->
+            TabLayoutMediator(binding.tabLayout, binding.vp2){ tab, position->
                 tab.text = subCatNameList[position]
             }.attach()
         }
@@ -65,5 +64,4 @@ class SubCategoryFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-
 }

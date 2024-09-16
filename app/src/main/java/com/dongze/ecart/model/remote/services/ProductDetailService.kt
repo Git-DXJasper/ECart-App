@@ -1,4 +1,4 @@
-package com.dongze.ecart.model.remote
+package com.dongze.ecart.model.remote.services
 
 import com.dongze.ecart.model.remote.dashboard.GetDetailByPIdResponse
 import retrofit2.Call

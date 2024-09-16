@@ -47,6 +47,7 @@ class LoginFragment : Fragment() {
                     response->
                     Toast.makeText(requireContext(),response.message,Toast.LENGTH_SHORT).show()
                     SecuredSPManager.saveBoolean(KEY_IS_LOGIN, true)
+                    SecuredSPManager.saveUser(response.user)
                     navtoMainActivity()
                 }
             }

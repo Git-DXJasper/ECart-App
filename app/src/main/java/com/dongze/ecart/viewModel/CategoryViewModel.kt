@@ -1,14 +1,11 @@
 package com.dongze.ecart.viewModel
 
-import android.content.Intent
 import android.util.Log
-import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.recyclerview.widget.GridLayoutManager
 import com.dongze.ecart.model.remote.ApiClient
-import com.dongze.ecart.model.remote.CategoryService
+import com.dongze.ecart.model.remote.services.CategoryService
 import com.dongze.ecart.model.remote.category.GetCategoryResponse
 import com.dongze.ecart.model.remote.category.GetProductsResponse
 import com.dongze.ecart.model.remote.category.GetSubCatByIdResponse

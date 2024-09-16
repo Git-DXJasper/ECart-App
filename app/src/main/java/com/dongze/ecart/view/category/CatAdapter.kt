@@ -24,6 +24,4 @@ class CatAdapter(private val clist: List<Category>, val communicator: Communicat
             communicator.sendCid(cid)
         }
     }
-
-
 }

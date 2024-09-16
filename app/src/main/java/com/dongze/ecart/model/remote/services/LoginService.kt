@@ -1,4 +1,4 @@
-package com.dongze.ecart.model.remote
+package com.dongze.ecart.model.remote.services
 
 import com.dongze.ecart.model.remote.profile.AuthUserRequest
 import com.dongze.ecart.model.remote.profile.AuthUserResponse

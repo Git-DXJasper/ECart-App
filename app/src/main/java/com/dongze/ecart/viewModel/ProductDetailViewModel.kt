@@ -5,9 +5,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.dongze.ecart.model.remote.ApiClient
-import com.dongze.ecart.model.remote.ProductDetailService
+import com.dongze.ecart.model.remote.services.ProductDetailService
 import com.dongze.ecart.model.remote.dashboard.GetDetailByPIdResponse
-import com.dongze.ecart.model.remote.dashboard.SearchResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
