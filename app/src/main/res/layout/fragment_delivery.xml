@@ -3,9 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".view.cart.DeliveryFragment"
     android:background="#FFF8B6">
 
+   <RadioGroup
+       android:id="@+id/rg_addr_options"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       app:layout_constraintTop_toTopOf="parent"
+       android:layout_margin="20dp"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -31,18 +31,34 @@ class CartItemsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        roomDBVM = ViewModelProvider(requireActivity(), RoomDBViewModelFactory(requireActivity().application))
-            .get(RoomDBViewModel::class.java)
+        roomDBVM = ViewModelProvider(
+            requireActivity(),
+            RoomDBViewModelFactory(requireActivity().application)
+        ).get(RoomDBViewModel::class.java)
 
-        roomDBVM.pDetailLiveData.observe(viewLifecycleOwner){
-            Log.d("RoomDB","cartItemFrag observing $it")
+        roomDBVM.pDetailLiveData.observe(viewLifecycleOwner) {
+            Log.d("RoomDB", "cartItemFrag observing $it")
             roomDBVM.storeInCartItem(it)
         }
-        roomDBVM.getListFromRoom(SecuredSPManager.getUser()?.userId?:-1)
-        roomDBVM.inCartItemList.observe(viewLifecycleOwner) {
-            binding.rvItemsIncart.layoutManager = LinearLayoutManager(requireContext())
-            binding.rvItemsIncart.adapter = InCartItemAdapter(it)
+        roomDBVM.getListFromRoom(SecuredSPManager.getUser()?.userId ?: -1)
+        roomDBVM.inCartItemList.observe(viewLifecycleOwner) { itemList->
+            with(binding) {
+                rvItemsIncart.layoutManager = LinearLayoutManager(requireContext())
+                rvItemsIncart.adapter = InCartItemAdapter(itemList, roomDBVM)
+            }
+        }
+        binding.btnCheckout.setOnClickListener {
+            reCalculateTotalPrice()
         }
     }
 
+    private fun reCalculateTotalPrice() {
+        roomDBVM.getListFromRoom(SecuredSPManager.getUser()?.userId ?: -1)
+        roomDBVM.inCartItemList.observe(viewLifecycleOwner) { itemList->
+            with(binding) {
+                val totalPrice = itemList.sumOf { it.price.toDouble() * it.qty }
+                txtTotalPrice.text = "Total price is $$totalPrice"
+            }
+        }
+    }
 }

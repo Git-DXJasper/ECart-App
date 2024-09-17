@@ -36,4 +36,16 @@ class RoomDBViewModel(application: Application): AndroidViewModel(application) {
     fun sendPDetail(pDetail: ProductDetail){
         _pDetailLiveData.value = pDetail
     }
+
+    fun increaseQTY(inCartItem: InCartItem){
+        dao.updateInCartItem(inCartItem)
+    }
+
+    fun decreaseQTY(inCartItem: InCartItem){
+        dao.updateInCartItem(inCartItem)
+    }
+
+    fun removeItem(inCartItem: InCartItem){
+        dao.deleteInCartItem(inCartItem)
+    }
 }

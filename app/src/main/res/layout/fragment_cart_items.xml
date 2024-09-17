@@ -13,7 +13,29 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btn_checkout"
         tools:listitem="@layout/vh_product"
         tools:itemCount="2"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_checkout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/checkout"
+        android:textSize="16sp"
+        android:textAllCaps="false"/>
+
+    <TextView
+        android:id="@+id/txt_total_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="total price: $4396"
+        app:layout_constraintBottom_toBottomOf="@id/btn_checkout"
+        app:layout_constraintStart_toEndOf="@id/btn_checkout"
+        android:textSize="16sp"
+        android:layout_margin="10dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

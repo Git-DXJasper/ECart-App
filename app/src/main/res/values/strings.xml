@@ -27,4 +27,5 @@
     <string name="hint_addr">enter your address here</string>
     <string name="hint_title">enter title of this address</string>
     <string name="confirm">Confirm</string>
+    <string name="checkout">Checkout</string>
 </resources>

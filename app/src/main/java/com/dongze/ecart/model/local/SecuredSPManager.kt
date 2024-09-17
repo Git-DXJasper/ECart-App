@@ -14,6 +14,8 @@ object SecuredSPManager {
     const val KEY_TWO_DONE = "two_done"
     const val KEY_THREE_DONE = "three_done"
     const val KEY_USER = "user"
+    const val KEY_DELIVERY = "delivery"
+    const val KEY_PAYMENT = "payment"
 
     private lateinit var sp: SharedPreferences
 
@@ -44,5 +46,11 @@ object SecuredSPManager {
     fun getUser():User?{
         val userJson = sp.getString(KEY_USER,null)
         return Gson().fromJson(userJson, User::class.java)
+    }
+    fun saveString(key:String, value:String){
+        sp.edit().putString(key,value).apply()
+    }
+    fun getString(key: String, defaultValue: String):String{
+        return sp.getString(key,defaultValue)?:defaultValue
     }
 }
