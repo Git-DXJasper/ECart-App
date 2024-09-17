@@ -25,8 +25,7 @@ class CartFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val fragList = listOf<Fragment>(CartItemsFragment(),DeliveryFragment(),PaymentFragment(),SummaryFragment())
+        val fragList = listOf(CartItemsFragment(),DeliveryFragment(),PaymentFragment(),SummaryFragment())
         binding.vp2.adapter = CheckOutVPAdapter(fragList, requireActivity())
         binding.tabLayout.setTabTextColors(
             ContextCompat.getColor(requireContext(), android.R.color.white), // Unselected color

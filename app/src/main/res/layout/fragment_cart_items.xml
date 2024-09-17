@@ -3,8 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".view.cart.CartItemsFragment"
     android:background="#FFCECA">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_items_incart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/vh_product"
+        tools:itemCount="2"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

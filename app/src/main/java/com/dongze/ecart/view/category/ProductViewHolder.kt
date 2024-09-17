@@ -7,13 +7,13 @@ import com.dongze.ecart.model.remote.dashboard.ProductDetail
 import com.squareup.picasso.Picasso
 
 class ProductViewHolder(val binding: VhProductBinding): ViewHolder(binding.root) {
-    fun setData(p: Product){
+    fun setData(product: Product){
         with(binding){
-            txtPid.text = "[${p.pid}]"
-            txtPname.text = p.pname
-            txtDescription.text = p.description
-            txtPrice.text = "$${p.price}"
-            Picasso.get().load("https://apolisrises.co.in/myshop/images/" + p.pImgUrl).into(imgProduct)
+            txtPid.text = "[${product.pid}]"
+            txtPname.text = product.pname
+            txtDescription.text = product.description
+            txtPrice.text = "$${product.price}"
+            Picasso.get().load("https://apolisrises.co.in/myshop/images/" + product.pImgUrl).into(imgProduct)
         }
     }
 }
