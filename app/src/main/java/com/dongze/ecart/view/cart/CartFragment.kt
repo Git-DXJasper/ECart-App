@@ -12,14 +12,13 @@ import com.google.android.material.tabs.TabLayoutMediator
 
 
 class CartFragment : Fragment() {
-    private var _binding: FragmentCartBinding? = null
-    private val binding get() = _binding!!
+    private lateinit var binding: FragmentCartBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentCartBinding.inflate(inflater,container,false)
+        binding = FragmentCartBinding.inflate(inflater,container,false)
         return binding.root
     }
 
@@ -42,8 +41,4 @@ class CartFragment : Fragment() {
         }.attach()
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
 }

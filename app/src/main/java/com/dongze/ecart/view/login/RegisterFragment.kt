@@ -12,8 +12,7 @@ import com.dongze.ecart.databinding.FragmentRegisterBinding
 import com.dongze.ecart.viewModel.LoginViewModel
 
 class RegisterFragment : Fragment() {
-    private var _binding: FragmentRegisterBinding? = null
-    private val binding get() = _binding!!
+    private lateinit var binding: FragmentRegisterBinding
     private lateinit var loginFrag: LoginFragment
     private lateinit var viewModel: LoginViewModel
 
@@ -21,7 +20,7 @@ class RegisterFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentRegisterBinding.inflate(inflater,container,false)
+        binding = FragmentRegisterBinding.inflate(inflater,container,false)
         return binding.root
     }
 
@@ -51,8 +50,4 @@ class RegisterFragment : Fragment() {
             .replace(R.id.fcv_login,frag)
             .commit()
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
 }

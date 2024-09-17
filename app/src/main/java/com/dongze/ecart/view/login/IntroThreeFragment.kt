@@ -16,8 +16,7 @@ import com.dongze.ecart.model.local.SecuredSPManager.KEY_TWO_DONE
 import com.dongze.ecart.view.MainActivity
 
 class IntroThreeFragment : Fragment() {
-    private var _binding: FragmentIntroThreeBinding? = null
-    private val binding get() = _binding!!
+    private lateinit var binding: FragmentIntroThreeBinding
     private lateinit var loginFrag: LoginFragment
     private lateinit var intro2Frag: IntroTwoFragment
 
@@ -25,7 +24,7 @@ class IntroThreeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentIntroThreeBinding.inflate(inflater,container,false)
+        binding = FragmentIntroThreeBinding.inflate(inflater,container,false)
         return binding.root
     }
 
@@ -71,8 +70,4 @@ class IntroThreeFragment : Fragment() {
             .replace(R.id.fcv_login,frag)
             .commit()
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
 }

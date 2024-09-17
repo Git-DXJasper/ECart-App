@@ -17,15 +17,14 @@ import com.dongze.ecart.model.local.SecuredSPManager
 import com.dongze.ecart.viewModel.AddressViewModel
 
 class AddressFragment : Fragment() {
-    private var _binding: FragmentAddressBinding? = null
-    private val binding get() = _binding!!
+    private lateinit var binding: FragmentAddressBinding
     private lateinit var viewModel: AddressViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentAddressBinding.inflate(inflater,container,false)
+        binding = FragmentAddressBinding.inflate(inflater,container,false)
         return binding.root
     }
 
@@ -65,8 +64,4 @@ class AddressFragment : Fragment() {
         dialog.show()
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
 }

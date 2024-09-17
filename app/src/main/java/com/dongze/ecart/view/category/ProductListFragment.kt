@@ -18,8 +18,7 @@ import com.dongze.ecart.viewModel.CategoryViewModel
 
 class ProductListFragment : Fragment() {
     private var subCid: String? = null
-    private var _binding: FragmentProductListBinding? = null
-    private val binding get() = _binding!!
+    private lateinit var binding: FragmentProductListBinding
     private lateinit var viewModel: CategoryViewModel
     private lateinit var plist: List<ProductDetail>
     private lateinit var communicator: Communicator
@@ -35,7 +34,7 @@ class ProductListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentProductListBinding.inflate(inflater,container,false)
+        binding = FragmentProductListBinding.inflate(inflater,container,false)
         return binding.root
     }
 
@@ -69,10 +68,5 @@ class ProductListFragment : Fragment() {
 
     fun receivePList(plist: List<ProductDetail>){
         this.plist = plist
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 }

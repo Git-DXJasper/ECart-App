@@ -16,8 +16,7 @@ import com.dongze.ecart.viewModel.RoomDBViewModel
 import com.squareup.picasso.Picasso
 
 class ProductDetailFragment : Fragment() {
-    private var _binding: FragmentProductDetailBinding? = null
-    private val binding get() = _binding!!
+    private lateinit var binding: FragmentProductDetailBinding
     private lateinit var pid : String
     private lateinit var viewModel: ProductDetailViewModel
     private lateinit var roomDBVM: RoomDBViewModel
@@ -26,7 +25,7 @@ class ProductDetailFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentProductDetailBinding.inflate(inflater,container,false)
+        binding = FragmentProductDetailBinding.inflate(inflater,container,false)
         return binding.root
     }
 
@@ -61,10 +60,5 @@ class ProductDetailFragment : Fragment() {
 
     fun receivePid(pid: String){
         this.pid = pid
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 }

@@ -12,15 +12,14 @@ import com.dongze.ecart.model.local.SecuredSPManager.KEY_USER
 
 
 class ProfileFragment : Fragment() {
-    private var _binding: FragmentProfileBinding? = null
-    private val binding get() = _binding!!
+    private lateinit var binding: FragmentProfileBinding
     private lateinit var addrFrag: AddressFragment
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentProfileBinding.inflate(inflater,container,false)
+        binding = FragmentProfileBinding.inflate(inflater,container,false)
         return binding.root
     }
 
@@ -41,9 +40,4 @@ class ProfileFragment : Fragment() {
         requireActivity().supportFragmentManager.beginTransaction()
             .replace(R.id.fcv_main,frag)
             .commit()
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
 }

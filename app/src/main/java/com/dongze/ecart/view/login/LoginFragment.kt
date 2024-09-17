@@ -17,8 +17,7 @@ import com.dongze.ecart.view.MainActivity
 import com.dongze.ecart.viewModel.LoginViewModel
 
 class LoginFragment : Fragment() {
-    private var _binding: FragmentLoginBinding? = null
-    private val binding get() = _binding!!
+    private lateinit var binding: FragmentLoginBinding
     private lateinit var registerFrag: RegisterFragment
     private lateinit var viewModel: LoginViewModel
 
@@ -26,7 +25,7 @@ class LoginFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentLoginBinding.inflate(inflater,container,false)
+        binding = FragmentLoginBinding.inflate(inflater,container,false)
         return binding.root
     }
 
@@ -71,8 +70,4 @@ class LoginFragment : Fragment() {
             .replace(R.id.fcv_login,frag)
             .commit()
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
 }

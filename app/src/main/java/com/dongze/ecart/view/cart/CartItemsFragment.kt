@@ -16,8 +16,7 @@ import com.dongze.ecart.viewModel.RoomDBViewModel
 import com.dongze.ecart.viewModel.RoomDBViewModelFactory
 
 class CartItemsFragment : Fragment() {
-    private var _binding: FragmentCartItemsBinding? = null
-    private val binding get() = _binding!!
+    private lateinit var binding: FragmentCartItemsBinding
     private lateinit var roomDBVM: RoomDBViewModel
 
 
@@ -25,7 +24,7 @@ class CartItemsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentCartItemsBinding.inflate(inflater,container,false)
+        binding = FragmentCartItemsBinding.inflate(inflater,container,false)
         return binding.root
     }
 
@@ -46,8 +45,4 @@ class CartItemsFragment : Fragment() {
         }
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
 }

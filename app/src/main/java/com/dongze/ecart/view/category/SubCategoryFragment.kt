@@ -14,8 +14,7 @@ import com.dongze.ecart.viewModel.CategoryViewModel
 import com.google.android.material.tabs.TabLayoutMediator
 
 class SubCategoryFragment : Fragment() {
-    private var _binding: FragmentSubCategoryBinding? = null
-    private val binding get() = _binding!!
+    private lateinit var binding: FragmentSubCategoryBinding
     private lateinit var viewModel: CategoryViewModel
     private lateinit var cid: String
 
@@ -23,7 +22,7 @@ class SubCategoryFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentSubCategoryBinding.inflate(inflater,container,false)
+        binding = FragmentSubCategoryBinding.inflate(inflater,container,false)
         return binding.root
     }
 
@@ -58,10 +57,5 @@ class SubCategoryFragment : Fragment() {
 
     fun receiveCid(cid: String){
         this.cid = cid
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 }

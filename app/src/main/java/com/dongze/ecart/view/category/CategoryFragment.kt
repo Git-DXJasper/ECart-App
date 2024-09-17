@@ -14,8 +14,8 @@ import com.dongze.ecart.view.Communicator
 import com.dongze.ecart.viewModel.CategoryViewModel
 
 class CategoryFragment : Fragment() {
-    private var _binding: FragmentCategoryBinding? = null
-    private val binding get() = _binding!!
+    private lateinit var binding: FragmentCategoryBinding
+
     private lateinit var viewModel: CategoryViewModel
     private lateinit var communicator: Communicator
 
@@ -23,7 +23,7 @@ class CategoryFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentCategoryBinding.inflate(inflater,container,false)
+        binding = FragmentCategoryBinding.inflate(inflater,container,false)
         return binding.root
     }
 
@@ -39,10 +39,5 @@ class CategoryFragment : Fragment() {
             binding.rvCat.layoutManager = GridLayoutManager(requireContext(),2)
             binding.rvCat.adapter = CatAdapter(response.categories, communicator)
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 }

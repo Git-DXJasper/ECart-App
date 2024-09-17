@@ -18,8 +18,7 @@ import java.util.Timer
 import java.util.TimerTask
 
 class DashboardFragment : Fragment() {
-    private var _binding: FragmentDashboardBinding? = null
-    private val binding get() = _binding!!
+    private lateinit var binding: FragmentDashboardBinding
     private lateinit var viewModel: SearchViewModel
     private lateinit var communicator: Communicator
 
@@ -38,7 +37,7 @@ class DashboardFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentDashboardBinding.inflate(inflater,container,false)
+        binding = FragmentDashboardBinding.inflate(inflater,container,false)
         return binding.root
     }
 
@@ -97,10 +96,5 @@ class DashboardFragment : Fragment() {
     private fun stopSlider() {
         timer.cancel()  // Stop the timer
         sliderHandler.removeCallbacks(sliderRunnable)  // Remove any pending runnables
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 }
