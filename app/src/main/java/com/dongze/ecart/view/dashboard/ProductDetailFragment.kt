@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.dongze.ecart.R
 import com.dongze.ecart.databinding.FragmentProductDetailBinding
 import com.dongze.ecart.model.remote.dashboard.ProductDetail
+import com.dongze.ecart.view.CustomOutlineProvider
 import com.dongze.ecart.view.cart.CartFragment
 import com.dongze.ecart.viewModel.ProductDetailViewModel
 import com.dongze.ecart.viewModel.RoomDBViewModel
@@ -51,6 +52,9 @@ class ProductDetailFragment : Fragment() {
                     roomDBVM.sendPDetail(p)
                     navToFrag(CartFragment())
                 }
+                btnAddToCart.elevation = 50f
+                val radius = 50f
+                btnAddToCart.outlineProvider = CustomOutlineProvider(radius)
             }
         }
     }

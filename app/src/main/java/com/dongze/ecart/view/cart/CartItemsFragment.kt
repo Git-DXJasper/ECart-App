@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dongze.ecart.databinding.FragmentCartItemsBinding
 import com.dongze.ecart.model.local.SecuredSPManager
+import com.dongze.ecart.view.CustomOutlineProvider
 import com.dongze.ecart.viewModel.RoomDBViewModel
 import com.dongze.ecart.viewModel.AndroidViewModelFactory
 
@@ -64,6 +65,9 @@ class CartItemsFragment : Fragment() {
         binding.btnCheckout.setOnClickListener {
             reCalculateTotalPrice()
         }
+        binding.btnCheckout.elevation = 50f
+        val radius = 50f
+        binding.btnCheckout.outlineProvider = CustomOutlineProvider(radius)
     }
 
     private fun reCalculateTotalPrice() {

@@ -4,6 +4,7 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.dongze.ecart.databinding.VhProductBinding
 import com.dongze.ecart.model.remote.category.Product
 import com.dongze.ecart.model.remote.dashboard.ProductDetail
+import com.dongze.ecart.view.CustomOutlineProvider
 import com.squareup.picasso.Picasso
 
 class ProductViewHolder(val binding: VhProductBinding): ViewHolder(binding.root) {
@@ -14,6 +15,10 @@ class ProductViewHolder(val binding: VhProductBinding): ViewHolder(binding.root)
             txtDescription.text = product.description
             txtPrice.text = "$${product.price}"
             Picasso.get().load("https://apolisrises.co.in/myshop/images/" + product.pImgUrl).into(imgProduct)
+
+            constraintLayout.elevation = 50f
+            val radius = 50f
+            constraintLayout.outlineProvider = CustomOutlineProvider(radius)
         }
     }
 }

@@ -17,6 +17,7 @@ import com.dongze.ecart.databinding.FragmentPaymentBinding
 import com.dongze.ecart.model.local.SecuredSPManager
 import com.dongze.ecart.model.local.SecuredSPManager.KEY_DELIVERY
 import com.dongze.ecart.view.Communicator
+import com.dongze.ecart.view.CustomOutlineProvider
 import com.dongze.ecart.viewModel.AndroidViewModelFactory
 import com.dongze.ecart.viewModel.OrderViewModel
 
@@ -57,6 +58,9 @@ class PaymentFragment : Fragment() {
                 Toast.makeText(requireContext(),"place order success, id:${it.orderId}",Toast.LENGTH_LONG).show()
             }
         }
+        binding.btnPlaceOrder.elevation = 50f
+        val radius = 50f
+        binding.btnPlaceOrder.outlineProvider = CustomOutlineProvider(radius)
     }
 
     private fun setUpRG() {

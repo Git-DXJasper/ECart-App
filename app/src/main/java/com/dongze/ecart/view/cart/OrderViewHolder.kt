@@ -3,6 +3,7 @@ package com.dongze.ecart.view.cart
 import androidx.recyclerview.widget.RecyclerView
 import com.dongze.ecart.databinding.VhOrderBinding
 import com.dongze.ecart.model.remote.cart.Order
+import com.dongze.ecart.view.CustomOutlineProvider
 
 class OrderViewHolder(val binding: VhOrderBinding): RecyclerView.ViewHolder(binding.root) {
     fun setData(order: Order){
@@ -14,6 +15,10 @@ class OrderViewHolder(val binding: VhOrderBinding): RecyclerView.ViewHolder(bind
             txtOrderStatus.text = "Order Status: ${order.orderStatus}"
             txtBillAmount.text = "Bill Amount: $${order.billAmount}"
             txtPayment.text = "Payment Method: ${order.paymentMethod}"
+
+            constraintLayout.elevation = 50f
+            val radius = 50f
+            constraintLayout.outlineProvider = CustomOutlineProvider(radius)
         }
     }
 }
