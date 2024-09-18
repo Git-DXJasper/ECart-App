@@ -27,8 +27,8 @@ class CartFragment : Fragment() {
         val fragList = listOf(CartItemsFragment(),DeliveryFragment(),PaymentFragment(),SummaryFragment())
         binding.vp2.adapter = CheckOutVPAdapter(fragList, requireActivity())
         binding.tabLayout.setTabTextColors(
-            ContextCompat.getColor(requireContext(), android.R.color.white), // Unselected color
-            ContextCompat.getColor(requireContext(), android.R.color.holo_green_dark) // Selected color
+            ContextCompat.getColor(requireContext(), R.color.white), // Unselected color
+            ContextCompat.getColor(requireContext(), R.color.orange) // Selected color
         )
 
         TabLayoutMediator(binding.tabLayout, binding.vp2){ tab, position->

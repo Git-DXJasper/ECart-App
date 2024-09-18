@@ -4,8 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".view.cart.DeliveryFragment"
-    android:background="#FFF8B6">
+    tools:context=".view.cart.DeliveryFragment">
 
    <RadioGroup
        android:id="@+id/rg_addr_options"

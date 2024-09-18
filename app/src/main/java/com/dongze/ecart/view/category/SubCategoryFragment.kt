@@ -45,8 +45,8 @@ class SubCategoryFragment : Fragment() {
             binding.vp2.adapter = ViewPagerAdapter(fragList, requireActivity())
 
             binding.tabLayout.setTabTextColors(
-                ContextCompat.getColor(requireContext(), android.R.color.white), // Unselected color
-                ContextCompat.getColor(requireContext(), android.R.color.holo_orange_light) // Selected color
+                ContextCompat.getColor(requireContext(), R.color.white), // Unselected color
+                ContextCompat.getColor(requireContext(), R.color.orange) // Selected color
             )
 
             TabLayoutMediator(binding.tabLayout, binding.vp2){ tab, position->

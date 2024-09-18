@@ -1,11 +1,13 @@
 package com.dongze.ecart.view.cart
 
 import android.os.Bundle
+import android.util.TypedValue
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.RadioButton
+import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.dongze.ecart.R
@@ -43,17 +45,25 @@ class DeliveryFragment : Fragment() {
             val rb = RadioButton(requireContext()).apply {
                 text = option
                 id = index
+                setTextSize(TypedValue.COMPLEX_UNIT_SP, 18f)
             }
-            binding.rgAddrOptions.addView(rb)
+
+            val params = RadioGroup.LayoutParams(
+                RadioGroup.LayoutParams.WRAP_CONTENT,
+                RadioGroup.LayoutParams.WRAP_CONTENT
+            ).apply {
+                setMargins(0, 54, 0, 54) // Add top and bottom margin of 54px
+            }
+            binding.rgAddrOptions.addView(rb,params)
+        }
+
+        if(addrOptions.isNotEmpty()){
+            binding.rgAddrOptions.check(0)
         }
 
         binding.rgAddrOptions.setOnCheckedChangeListener { radioGroup, checkedId ->
             val selectedOption = addrOptions[checkedId]
             SecuredSPManager.saveString(KEY_DELIVERY,selectedOption)
-
-            //when retrieving
-            //val title = sp.substringAfter("[").substringBefore("]")
-            //val addr = sp.substringAfter(": ").trim()
         }
     }
 }
