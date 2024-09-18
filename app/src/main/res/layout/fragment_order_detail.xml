@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.cart.OrderDetailFragment"
+    android:paddingStart="20dp"
+    android:paddingEnd="20dp">
+
+    <TextView
+        android:id="@+id/txt_order_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="Order ID"
+        android:layout_margin="5dp"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/txt_addr_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/txt_order_id"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="Address title"
+        android:layout_margin="5dp"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/txt_addr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/txt_addr_title"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="Address line"
+        android:layout_margin="5dp"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/txt_bill_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/txt_addr"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="bill amount"
+        android:layout_margin="5dp"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/txt_payment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/txt_bill_amount"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="payment method"
+        android:layout_margin="5dp"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/txt_order_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/txt_payment"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="order status"
+        android:layout_margin="5dp"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/txt_order_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/txt_order_status"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="Date time"
+        android:layout_margin="5dp"
+        android:textSize="18sp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_items_in_order_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/txt_order_date"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="5dp"
+        tools:itemCount="1"
+        tools:listitem="@layout/vh_item_in_od"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

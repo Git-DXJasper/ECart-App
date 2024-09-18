@@ -21,4 +21,7 @@ interface InCartItemDao {
 
     @Query("SELECT * FROM $TABLE_NAME WHERE USER_ID = :userId ")
     fun getInCartItemList(userId: Int): List<InCartItem>
+
+    @Query("DELETE FROM $TABLE_NAME")
+    fun clear()
 }

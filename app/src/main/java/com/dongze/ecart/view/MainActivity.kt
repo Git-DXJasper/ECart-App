@@ -7,6 +7,8 @@ import com.dongze.ecart.R
 import com.dongze.ecart.databinding.ActivityMainBinding
 import com.dongze.ecart.model.remote.dashboard.ProductDetail
 import com.dongze.ecart.view.cart.CartFragment
+import com.dongze.ecart.view.cart.OrderDetailFragment
+import com.dongze.ecart.view.cart.SummaryFragment
 import com.dongze.ecart.view.category.CategoryFragment
 import com.dongze.ecart.view.category.ProductListFragment
 import com.dongze.ecart.view.category.SubCategoryFragment
@@ -23,6 +25,7 @@ class MainActivity : AppCompatActivity(), Communicator {
     private lateinit var subCatFrag: SubCategoryFragment
     private lateinit var pDetailFrag: ProductDetailFragment
     private lateinit var pListFrag: ProductListFragment
+    private lateinit var orderDetailFrag: OrderDetailFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,6 +42,7 @@ class MainActivity : AppCompatActivity(), Communicator {
         subCatFrag = SubCategoryFragment()
         pDetailFrag = ProductDetailFragment()
         pListFrag = ProductListFragment()
+        orderDetailFrag = OrderDetailFragment()
 
         navToFrag(dashboardFrag)
 
@@ -78,5 +82,10 @@ class MainActivity : AppCompatActivity(), Communicator {
     override fun sendPList(plist: List<ProductDetail>) {
         pListFrag.receivePList(plist)
         navToFrag(pListFrag)
+    }
+
+    override fun sendOrderId(orderId: Int) {
+        orderDetailFrag.receiveOrderId(orderId)
+        navToFrag(orderDetailFrag)
     }
 }

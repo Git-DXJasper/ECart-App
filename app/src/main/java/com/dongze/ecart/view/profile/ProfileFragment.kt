@@ -9,11 +9,13 @@ import com.dongze.ecart.R
 import com.dongze.ecart.databinding.FragmentProfileBinding
 import com.dongze.ecart.model.local.SecuredSPManager
 import com.dongze.ecart.model.local.SecuredSPManager.KEY_USER
+import com.dongze.ecart.view.cart.SummaryFragment
 
 
 class ProfileFragment : Fragment() {
     private lateinit var binding: FragmentProfileBinding
     private lateinit var addrFrag: AddressFragment
+    private lateinit var summaryFrag: SummaryFragment
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,12 +28,16 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         addrFrag = AddressFragment()
+        summaryFrag = SummaryFragment()
 
         with(binding){
             txtUsername.text = "Welcome, ${SecuredSPManager.getUser()?.name}!"
 
             btnAddr.setOnClickListener {
                 navToFrag(addrFrag)
+            }
+            btnOrders.setOnClickListener {
+                navToFrag(summaryFrag)
             }
         }
     }

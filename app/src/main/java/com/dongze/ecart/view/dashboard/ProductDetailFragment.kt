@@ -17,7 +17,7 @@ import com.squareup.picasso.Picasso
 
 class ProductDetailFragment : Fragment() {
     private lateinit var binding: FragmentProductDetailBinding
-    private lateinit var pid : String
+    private var pid : String? = null
     private lateinit var viewModel: ProductDetailViewModel
     private lateinit var roomDBVM: RoomDBViewModel
 
@@ -34,7 +34,9 @@ class ProductDetailFragment : Fragment() {
 
         viewModel = ViewModelProvider(requireActivity())[ProductDetailViewModel::class.java]
         roomDBVM = ViewModelProvider(requireActivity())[RoomDBViewModel::class.java]
-        viewModel.getDetail(pid)
+        pid?.let {
+            viewModel.getDetail(it)
+        }
         viewModel.pDetailRes.observe(viewLifecycleOwner){
             response->
             Toast.makeText(requireContext(),response.message, Toast.LENGTH_SHORT).show()

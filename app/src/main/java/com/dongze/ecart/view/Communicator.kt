@@ -8,4 +8,6 @@ interface Communicator {
     fun sendPid(pid: String)
 
     fun sendPList(plist: List<ProductDetail>)
+
+    fun sendOrderId(orderId: Int)
 }

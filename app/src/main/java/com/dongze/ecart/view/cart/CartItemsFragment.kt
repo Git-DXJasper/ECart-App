@@ -6,14 +6,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dongze.ecart.databinding.FragmentCartItemsBinding
-import com.dongze.ecart.model.local.InCartItem
 import com.dongze.ecart.model.local.SecuredSPManager
 import com.dongze.ecart.viewModel.RoomDBViewModel
-import com.dongze.ecart.viewModel.RoomDBViewModelFactory
+import com.dongze.ecart.viewModel.AndroidViewModelFactory
 
 class CartItemsFragment : Fragment() {
     private lateinit var binding: FragmentCartItemsBinding
@@ -33,7 +31,7 @@ class CartItemsFragment : Fragment() {
 
         roomDBVM = ViewModelProvider(
             requireActivity(),
-            RoomDBViewModelFactory(requireActivity().application)
+            AndroidViewModelFactory(requireActivity().application)
         ).get(RoomDBViewModel::class.java)
 
         roomDBVM.pDetailLiveData.observe(viewLifecycleOwner) {

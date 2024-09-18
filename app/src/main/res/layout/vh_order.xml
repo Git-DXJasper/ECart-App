@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/shape_round_border"
+    android:layout_margin="10dp"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/txt_addr_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="5dp"
+        tools:text="addrTitle"/>
+
+    <TextView
+        android:id="@+id/txt_datetime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="5dp"
+        tools:text="4:36PM - Sep 17,2024"/>
+
+    <TextView
+        android:id="@+id/txt_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/txt_addr_title"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="5dp"
+        tools:text="Address line"/>
+
+    <TextView
+        android:id="@+id/txt_order_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/txt_address"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="[orderId]"
+        android:layout_margin="5dp"/>
+
+    <TextView
+        android:id="@+id/txt_order_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/txt_address"
+        app:layout_constraintStart_toEndOf="@id/txt_order_id"
+        tools:text="Order Status: Received"
+        android:layout_margin="5dp"/>
+
+    <TextView
+        android:id="@+id/txt_bill_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/txt_order_id"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="bill amount: $666"
+        android:layout_margin="5dp"/>
+
+    <TextView
+        android:id="@+id/txt_payment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/txt_order_id"
+        app:layout_constraintStart_toEndOf="@id/txt_bill_amount"
+        tools:text=" ,Payment Method: Debit Card"
+        android:layout_margin="5dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
