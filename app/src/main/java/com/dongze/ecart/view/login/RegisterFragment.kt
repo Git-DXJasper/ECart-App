@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.dongze.ecart.R
 import com.dongze.ecart.databinding.FragmentRegisterBinding
+import com.dongze.ecart.view.CustomOutlineProvider
 import com.dongze.ecart.viewModel.LoginViewModel
 
 class RegisterFragment : Fragment() {
@@ -42,6 +43,17 @@ class RegisterFragment : Fragment() {
                     navToFrag(loginFrag)
                 }
             }
+            btnSignup.elevation = 50f
+            edtEmail.elevation = 50f
+            edtName.elevation = 50f
+            edtPhone.elevation = 50f
+            edtPassword.elevation = 50f
+            val radius = 50f
+            btnSignup.outlineProvider = CustomOutlineProvider(radius)
+            edtEmail.outlineProvider = CustomOutlineProvider(radius)
+            edtName.outlineProvider = CustomOutlineProvider(radius)
+            edtPhone.outlineProvider = CustomOutlineProvider(radius)
+            edtPassword.outlineProvider = CustomOutlineProvider(radius)
         }
     }
 

@@ -10,7 +10,7 @@
     <string name="hint_email">enter your email here</string>
     <string name="hint_password">enter your password here</string>
     <string name="login">Login</string>
-    <string name="to_signup"><u>Do not have an account? Click here to sign up!</u>></string>
+    <string name="to_signup"><u>Do not have an account? Click here to sign up!</u></string>
     <string name="hint_full_name">enter your full name here</string>
     <string name="hint_mobile_number">enter your mobile number here</string>
     <string name="signup">Sign up</string>
@@ -29,4 +29,5 @@
     <string name="confirm">Confirm</string>
     <string name="checkout">Checkout</string>
     <string name="place_order">Confirm and Place the order</string>
+    <string name="get_started">Get Started !</string>
 </resources>

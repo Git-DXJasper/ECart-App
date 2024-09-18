@@ -13,6 +13,7 @@ import com.dongze.ecart.model.local.SecuredSPManager.KEY_IS_LOGIN
 import com.dongze.ecart.model.local.SecuredSPManager.KEY_ONE_DONE
 import com.dongze.ecart.model.local.SecuredSPManager.KEY_THREE_DONE
 import com.dongze.ecart.model.local.SecuredSPManager.KEY_TWO_DONE
+import com.dongze.ecart.view.CustomOutlineProvider
 import com.dongze.ecart.view.MainActivity
 
 class IntroThreeFragment : Fragment() {
@@ -39,6 +40,10 @@ class IntroThreeFragment : Fragment() {
                 navToFrag(loginFrag)
                 SecuredSPManager.saveBoolean(KEY_THREE_DONE, true)
             }
+            btnNext.elevation = 40f
+            val radius = 50f
+            btnNext.outlineProvider = CustomOutlineProvider(radius)
+
             btnSkip.setOnClickListener {
                 navToFrag(loginFrag)
                 SecuredSPManager.saveBoolean(KEY_ONE_DONE, true)

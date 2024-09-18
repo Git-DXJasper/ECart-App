@@ -13,6 +13,7 @@ import com.dongze.ecart.R
 import com.dongze.ecart.databinding.FragmentLoginBinding
 import com.dongze.ecart.model.local.SecuredSPManager
 import com.dongze.ecart.model.local.SecuredSPManager.KEY_IS_LOGIN
+import com.dongze.ecart.view.CustomOutlineProvider
 import com.dongze.ecart.view.MainActivity
 import com.dongze.ecart.viewModel.LoginViewModel
 
@@ -50,6 +51,13 @@ class LoginFragment : Fragment() {
                     navtoMainActivity()
                 }
             }
+            btnLogin.elevation = 50f
+            edtEmail.elevation = 50f
+            edtPassword.elevation = 50f
+            val radius = 50f
+            btnLogin.outlineProvider = CustomOutlineProvider(radius)
+            edtEmail.outlineProvider = CustomOutlineProvider(radius)
+            edtPassword.outlineProvider = CustomOutlineProvider(radius)
         }
     }
 

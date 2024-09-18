@@ -13,6 +13,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.dongze.ecart.R
 import com.dongze.ecart.databinding.FragmentDashboardBinding
 import com.dongze.ecart.view.Communicator
+import com.dongze.ecart.view.CustomOutlineProvider
 import com.dongze.ecart.viewModel.SearchViewModel
 import java.util.Timer
 import java.util.TimerTask
@@ -56,6 +57,9 @@ class DashboardFragment : Fragment() {
                     communicator.sendPList(response.products)
                 }
             }
+            searchArea.elevation = 40f
+            val radius = 50f
+            searchArea.outlineProvider = CustomOutlineProvider(radius)
         }
         setUpImgSlider()
     }

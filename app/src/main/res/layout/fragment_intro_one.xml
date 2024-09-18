@@ -33,6 +33,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"
+        android:clipToOutline="true"
+        android:background="@drawable/gradient_ocean"
         android:layout_margin="20dp"
         android:text="@string/next"
         app:layout_constraintBottom_toBottomOf="parent"

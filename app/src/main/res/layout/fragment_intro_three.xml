@@ -41,9 +41,12 @@
         android:id="@+id/btn_next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="10dp"
+        android:padding="20dp"
         android:layout_margin="20dp"
-        android:text="@string/next"
+        android:clipToOutline="true"
+        android:background="@drawable/gradient_sunset"
+        android:text="@string/get_started"
+        android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
