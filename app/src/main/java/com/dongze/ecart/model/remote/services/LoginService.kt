@@ -2,6 +2,8 @@ package com.dongze.ecart.model.remote.services
 
 import com.dongze.ecart.model.remote.profile.AuthUserRequest
 import com.dongze.ecart.model.remote.profile.AuthUserResponse
+import com.dongze.ecart.model.remote.profile.LogoutRequest
+import com.dongze.ecart.model.remote.profile.LogoutResponse
 import com.dongze.ecart.model.remote.profile.RegisterRequest
 import com.dongze.ecart.model.remote.profile.RegisterResponse
 import retrofit2.Call
@@ -21,4 +23,10 @@ interface LoginService {
     fun authorizeUser(
         @Body authUserRequest: AuthUserRequest
     ): Call<AuthUserResponse>
+
+    @Headers("Content-type: application/json")
+    @POST("User/logout")
+    fun logoutUser(
+        @Body logoutRequest: LogoutRequest
+    ): Call<LogoutResponse>
 }

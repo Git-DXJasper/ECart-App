@@ -18,6 +18,7 @@ object ApiClient {
         Retrofit.Builder()
             .baseUrl("https://apolisrises.co.in/myshop/index.php/")
             .addConverterFactory(GsonConverterFactory.create())
+            .client(client)
             .build()
     }
 }

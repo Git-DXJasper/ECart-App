@@ -39,7 +39,7 @@ object SecuredSPManager {
         return sp.getBoolean(key,defaultValue)
     }
 
-    fun saveUser(u: User){
+    fun saveUser(u: User?){
         sp.edit().putString(KEY_USER, Gson().toJson(u)).apply()
     }
 
@@ -52,5 +52,8 @@ object SecuredSPManager {
     }
     fun getString(key: String, defaultValue: String):String{
         return sp.getString(key,defaultValue)?:defaultValue
+    }
+    fun clear(){
+        sp.edit().clear().apply()
     }
 }

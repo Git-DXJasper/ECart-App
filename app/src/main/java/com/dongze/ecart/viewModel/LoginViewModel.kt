@@ -1,5 +1,6 @@
 package com.dongze.ecart.viewModel
 
+import android.media.tv.TvContract.Channels.Logo
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -8,6 +9,8 @@ import com.dongze.ecart.model.remote.ApiClient
 import com.dongze.ecart.model.remote.services.LoginService
 import com.dongze.ecart.model.remote.profile.AuthUserRequest
 import com.dongze.ecart.model.remote.profile.AuthUserResponse
+import com.dongze.ecart.model.remote.profile.LogoutRequest
+import com.dongze.ecart.model.remote.profile.LogoutResponse
 import com.dongze.ecart.model.remote.profile.RegisterRequest
 import com.dongze.ecart.model.remote.profile.RegisterResponse
 import retrofit2.Call
@@ -21,6 +24,9 @@ class LoginViewModel: ViewModel() {
 
     private val _authUserRes = MutableLiveData<AuthUserResponse>()
     val authUserRes: LiveData<AuthUserResponse> = _authUserRes
+
+    private val _logoutRes = MutableLiveData<LogoutResponse>()
+    val logoutRes: LiveData<LogoutResponse> = _logoutRes
 
     fun signup(email: String, password: String, name: String, phone: String){
         val call = loginService.registerUser(RegisterRequest(email, name, phone, password))
@@ -66,6 +72,30 @@ class LoginViewModel: ViewModel() {
                 }
             }
             override fun onFailure(call: Call<AuthUserResponse>, t: Throwable) {
+                t.printStackTrace()
+                Log.d("api_fail","login fail,Error: $t")
+            }
+        })
+    }
+
+    fun logout(emailId: String){
+        val call = loginService.logoutUser(LogoutRequest(emailId))
+        call.enqueue(object : Callback<LogoutResponse>{
+            override fun onResponse(call: Call<LogoutResponse>, response: Response<LogoutResponse>) {
+                if(!response.isSuccessful()){
+                    Log.d("api_fail","fail to logout, response code: ${response.code()}")
+                }
+                val res: LogoutResponse? = response.body()
+                if(res==null){
+                    Log.d("api_fail","empty response!")
+                }
+                if(res?.status==0){
+                    Log.d("api_success","logout success!")
+                    _logoutRes.value = res
+                }
+            }
+
+            override fun onFailure(call: Call<LogoutResponse>, t: Throwable) {
                 t.printStackTrace()
                 Log.d("api_fail","login fail,Error: $t")
             }
